@@ -22,5 +22,12 @@ module.exports = {
     "jest"
   ],
   "rules": {
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
   }
 };
