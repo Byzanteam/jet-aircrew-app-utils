@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "repository": "https://github.com/Byzanteam/jet-aircrew-app-utils",
   "author": "Phil Chen <06fahchen@gmail.com>",
+  "main": "./src/main.js",
   "license": "MIT",
   "scripts": {
     "build": "yarn run rollup -c",
