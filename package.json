@@ -5,7 +5,7 @@
   "author": "Phil Chen <06fahchen@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "lint": "yarn run eslint ./",
+    "lint": "yarn run eslint --ext .js,.ts ./",
     "test": "jest"
   },
   "devDependencies": {
