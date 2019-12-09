@@ -18,6 +18,21 @@
     esutils "^2.0.2"
     js-tokens "^4.0.0"
 
+"@rollup/plugin-typescript@^2.0.1":
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@rollup/plugin-typescript/-/plugin-typescript-2.0.1.tgz#3f0c2801abd0173edb59b4bb280e7c8c47a25468"
+  integrity sha512-UA/bN/DlHN19xdOllXmp7G7pM2ac9dQMg0q2T1rg4Bogzb7oHXj2WGafpiNpEm54PivcJdzGRJvRnI6zCISW3w==
+  dependencies:
+    "@rollup/pluginutils" "^3.0.0"
+    resolve "^1.12.2"
+
+"@rollup/pluginutils@^3.0.0":
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/@rollup/pluginutils/-/pluginutils-3.0.0.tgz#9978c9d4cd5d6908755362336f699633a3cee343"
+  integrity sha512-qBbGQQaUUiId/lBU9VMeYlVLOoRNvz1fV8HWY5tiGDpI2gdPZHbmOfCjzSdXPhdq3XOfyWvXEBlIPbnM3+9ogQ==
+  dependencies:
+    estree-walker "^0.6.1"
+
 "@types/eslint-visitor-keys@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@types/eslint-visitor-keys/-/eslint-visitor-keys-1.0.0.tgz#1ee30d79544ca84d68d4b3cdb0af4f205663dd2d"
@@ -1347,7 +1362,7 @@ resolve-from@^4.0.0:
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
   integrity sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g==
 
-resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.5.0:
+resolve@^1.10.0, resolve@^1.11.0, resolve@^1.11.1, resolve@^1.12.2, resolve@^1.5.0:
   version "1.13.1"
   resolved "https://registry.yarnpkg.com/resolve/-/resolve-1.13.1.tgz#be0aa4c06acd53083505abb35f4d66932ab35d16"
   integrity sha512-CxqObCX8K8YtAhOBRg+lrcdn+LK+WYOS8tSjqSFbjtrI5PnS63QPhZl4+yKfrU9tdsbMu9Anr/amegT87M9Z6w==

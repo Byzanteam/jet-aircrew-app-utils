@@ -1,4 +1,4 @@
-
+import typescript from '@rollup/plugin-typescript';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 import { version } from './package.json';
@@ -15,5 +15,6 @@ export default {
   plugins: [
     resolve(),
     production && terser(), // minify, but only in production
+    typescript(),
   ],
 };

@@ -8,6 +8,7 @@
     "lint": "yarn run eslint ./"
   },
   "devDependencies": {
+    "@rollup/plugin-typescript": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^2.10.0",
     "@typescript-eslint/parser": "^2.10.0",
     "eslint": "^6.7.2",
