@@ -22,6 +22,7 @@ module.exports = {
     "jest"
   ],
   "rules": {
+    'space-before-function-paren': ['error', 'always'],
   },
   "settings": {
     "import/resolver": {
