@@ -1,0 +1,48 @@
+$black: #000;
+$white: #fff;
+
+$gray1: #313c56;
+$gray2: #6b7885;
+$gray3: #95a4b3;
+$gray4: #b7c0ca;
+$gray5: #d4d7db;
+$gray6: #e9eaeb;
+$gray7: #f0eff4;
+$gray8: #f4f4f8;
+$gray9: #fbfcff;
+
+$primary-color: #04bf78;
+$primary-dark-color: mix($primary-color, $black, 90%);
+$primary-darker-color: mix($primary-color, $black, 80%);
+$primary-light-color: mix($primary-color, $white, 30%);
+$primary-lighter-color: mix($primary-color, $white, 10%);
+$primary-lightest-color: mix($primary-color, $white, 5%);
+
+$success-color: #43bc08;
+$success-dark-color: mix($success-color, $black, 90%);
+$success-darker-color: mix($success-color, $black, 80%);
+$success-light-color: mix($success-color, $white, 30%);
+$success-lighter-color: mix($success-color, $white, 10%);
+$success-lightest-color: mix($success-color, $white, 5%);
+
+$error-color: #f0382a;
+$error-dark-color: mix($error-color, $black, 90%);
+$error-darker-color: mix($error-color, $black, 80%);
+$error-light-color: mix($error-color, $white, 30%);
+$error-lighter-color: mix($error-color, $white, 10%);
+$error-lightest-color: mix($error-color, $white, 5%);
+
+$warning-color: #f3b704;
+$warning-dark-color: mix($warning-color, $black, 90%);
+$warning-darker-color: mix($warning-color, $black, 80%);
+$warning-light-color: mix($warning-color, $white, 30%);
+$warning-lighter-color: mix($warning-color, $white, 10%);
+$warning-lightest-color: mix($warning-color, $white, 5%);
+
+$title-size: 18px;
+$subtitle-size1: 16px;
+$subtitle-size2: 15px;
+$primary-size: 14px;
+$body-size1: 14px;
+$body-size2: 13px;
+$caption-size: 12px;

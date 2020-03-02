@@ -1,0 +1,231 @@
+@import '../variables';
+
+$spacer: .1rem;
+$spacers: ();
+
+@for $i from 0 through 10 {
+  $spacers: map-merge($spacers, ($i: $spacer * $i));
+}
+
+$utilities: (
+  // Display utilities
+  "display": (
+    property: display,
+    class: d,
+    values: none inline inline-block block flex inline-flex,
+  ),
+  "overflow": (
+    property: overflow,
+    class: 'overflow',
+    values: auto hidden visible,
+  ),
+  "overflow-x": (
+    property: overflow-x,
+    class: 'overflow-x',
+    values: auto hidden,
+  ),
+  "overflow-y": (
+    property: overflow-y,
+    class: 'overflow-y',
+    values: auto hidden,
+  ),
+
+  // Flex utilities
+  "flex-direction": (
+    property: flex-direction,
+    class: flex,
+    values: row column,
+  ),
+  "flex-grow": (
+    property: flex-grow,
+    class: flex,
+    values: (
+      grow-0: 0,
+      grow-1: 1,
+    )
+  ),
+  "flex-shrink": (
+    property: flex-shrink,
+    class: flex,
+    values: (
+      shrink-0: 0,
+      shrink-1: 1,
+    )
+  ),
+  "flex-wrap": (
+    property: flex-wrap,
+    class: flex,
+    values: wrap nowrap,
+  ),
+  "justify-content": (
+    property: justify-content,
+    class: justify,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      space-between: space-between,
+      space-around: space-around,
+    ),
+  ),
+  "align-items": (
+    property: align-items,
+    class: align,
+    values: (
+      start: flex-start,
+      end: flex-end,
+      center: center,
+      baseline: baseline,
+      stretch: stretch,
+    ),
+  ),
+
+  // Margin utilities
+  "margin": (
+    property: margin,
+    class: ma,
+    values: $spacers
+  ),
+  "margin-x": (
+    property: margin-right margin-left,
+    class: mx,
+    values: $spacers
+  ),
+  "margin-y": (
+    property: margin-top margin-bottom,
+    class: my,
+    values: $spacers
+  ),
+  "margin-top": (
+    property: margin-top,
+    class: mt,
+    values: $spacers
+  ),
+  "margin-right": (
+    property: margin-right,
+    class: mr,
+    values: $spacers
+  ),
+  "margin-bottom": (
+    property: margin-bottom,
+    class: mb,
+    values: $spacers
+  ),
+  "margin-left": (
+    property: margin-left,
+    class: ml,
+    values: $spacers
+  ),
+
+  // Padding utilities
+  "padding": (
+    property: padding,
+    class: pa,
+    values: $spacers,
+  ),
+  "padding-x": (
+    property: padding-right padding-left,
+    class: px,
+    values: $spacers,
+  ),
+  "padding-y": (
+    property: padding-top padding-bottom,
+    class: py,
+    values: $spacers,
+  ),
+  "padding-top": (
+    property: padding-top,
+    class: pt,
+    values: $spacers,
+  ),
+  "padding-right": (
+    property: padding-right,
+    class: pr,
+    values: $spacers,
+  ),
+  "padding-bottom": (
+    property: padding-bottom,
+    class: pb,
+    values: $spacers,
+  ),
+  "padding-left": (
+    property: padding-left,
+    class: pl,
+    values: $spacers,
+  ),
+
+  // Text
+  "text-align": (
+    property: text-align,
+    class: text,
+    values: left right center justify start end,
+  ),
+  "white-space": (
+    property: white-space,
+    class: text,
+    values: (
+      wrap: normal,
+      no-wrap: nowrap,
+    ),
+  ),
+
+  // Cursor
+  "cursor": (
+    property: cursor,
+    class: cursor,
+    values: pointer default move not-allowed text,
+  ),
+
+  // Font
+  "font-size": (
+    property: font-size,
+    class: text-size,
+    values: (
+      title: $title-size,
+      subtitle-1: $subtitle-size1,
+      subtitle-2: $subtitle-size2,
+      primary: $primary-size,
+      body-1: $body-size1,
+      body-2: $body-size2,
+      caption: $caption-size,
+    ),
+  ),
+  "font-weight": (
+    property: font-weight,
+    class: font-weight,
+    values: 500 700,
+  ),
+);
+
+$utils-values: map-keys($utilities);
+
+@each $key in $utils-values {
+  $utility: map-get($utilities, $key);
+
+  $properties: map-get($utility, property);
+  $values: map-get($utility, values);
+
+  // 如果 values 为 string 或者 list, 转换为 map
+  @if (type-of($values) == 'string' or type-of(nth($values, 1)) != 'list') {
+    $values: zip($values, $values);
+  }
+
+  // 一个 class 里面可以配置多个属性
+  @if (type-of($properties) == 'string') {
+    $properties: append((), $properties);
+  }
+
+  @each $value in $values {
+    $property-class: map-get($utility, class);
+    $property-class-modifier: nth($value, 1);
+    $val: nth($value, 2);
+
+    .#{$property-class}-#{$property-class-modifier} {
+      @for $i from 1 through length($properties) {
+        // 遍历要设置的属性
+        $property: nth($properties, $i);
+        #{$property}: #{$val} !important;
+      }
+    }
+  }
+}

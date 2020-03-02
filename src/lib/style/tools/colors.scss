@@ -1,0 +1,101 @@
+@import '../variables';
+
+@mixin background-color($color-value) {
+  background-color: $color-value !important;
+  border-color: $color-value !important;
+}
+
+@mixin text-color($color-value) {
+  color: $color-value !important;
+}
+
+$colors: (
+  primary: (
+    'base': $primary-color,
+    'dark': $primary-dark-color,
+    'darker': $primary-darker-color,
+    'light': $primary-light-color,
+    'lighter': $primary-lighter-color,
+    'lightest': $primary-lightest-color,
+  ),
+
+  success: (
+    'base': $success-color,
+    'dark': $success-dark-color,
+    'darker': $success-darker-color,
+    'light': $success-light-color,
+    'lighter': $success-lighter-color,
+    'lightest': $success-lightest-color,
+  ),
+
+  error: (
+    'base': $error-color,
+    'dark': $error-dark-color,
+    'darker': $error-darker-color,
+    'light': $error-light-color,
+    'lighter': $error-lighter-color,
+    'lightest': $error-lightest-color,
+  ),
+
+  warning: (
+    'base': $warning-color,
+    'dark': $warning-dark-color,
+    'darker': $warning-darker-color,
+    'light': $warning-light-color,
+    'lighter': $warning-lighter-color,
+    'lightest': $warning-lightest-color,
+  ),
+
+  gray: (
+    1: $gray1,
+    2: $gray2,
+    3: $gray3,
+    4: $gray4,
+    5: $gray5,
+    6: $gray6,
+    7: $gray7,
+    8: $gray8,
+    9: $gray9,
+  ),
+
+  black: $black,
+  white: $white,
+);
+
+$packs: map-keys($colors);
+
+@each $color in $packs {
+  $color-pack: map-get($colors, $color);
+
+  @if (type-of($color-pack) == 'map') {
+    @each $color-type, $color-value in $color-pack {
+      @if ($color-type == 'base') {
+        .#{$color} {
+          @include background-color($color-value);
+        }
+
+        .text-#{$color} {
+          @include text-color($color-value);
+        }
+      } @else {
+        .#{$color}-#{$color-type} {
+          @include background-color($color-value);
+        }
+
+        .text-#{$color}-#{$color-type} {
+          @include text-color($color-value);
+        }
+      }
+    }
+  } @else {
+    $color-value: $color-pack;
+
+    .#{$color} {
+      @include background-color($color-value);
+    }
+
+    .text-#{$color} {
+      @include text-color($color-value);
+    }
+  }
+}

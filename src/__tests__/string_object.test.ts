@@ -1,4 +1,4 @@
-import StringObject from '../string_object';
+import StringObject from '../lib/script/string_object';
 
 test('deserialize rawValue when construct', () => {
   const obj = { foo: 'bar' };
