@@ -3,7 +3,7 @@ class StringObject {
 
   value: object;
 
-  constructor(rawValue: string) {
+  constructor (rawValue: string) {
     this.rawValue = rawValue;
 
     Object.defineProperty(this, 'value', {
@@ -12,14 +12,14 @@ class StringObject {
     });
   }
 
-  static serialize(obj: StringObject | object):String {
+  static serialize (obj: StringObject | object): string {
     if (obj instanceof StringObject) {
       return obj.rawValue;
     }
     return JSON.stringify(obj);
   }
 
-  static deserialize(str: string):StringObject {
+  static deserialize (str: string): StringObject {
     return JSON.parse(str);
   }
 }
