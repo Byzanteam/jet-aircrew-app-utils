@@ -1,8 +1,11 @@
 {
-  "name": "jet-aircrew-app-utils",
+  "name": "@byzanteam/jet-aircrew-app-utils",
   "version": "0.1.0",
-  "repository": "https://github.com/Byzanteam/jet-aircrew-app-utils",
-  "author": "Phil Chen <06fahchen@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Byzanteam/jet-aircrew-app-utils.git"
+  },
+  "author": "Byzanteam",
   "main": "./src/main.js",
   "license": "MIT",
   "scripts": {
@@ -33,5 +36,10 @@
   "files": [
     "dist/*",
     "src/*"
-  ]
+  ],
+  "description": "",
+  "bugs": {
+    "url": "https://github.com/Byzanteam/jet-aircrew-app-utils/issues"
+  },
+  "homepage": "https://github.com/Byzanteam/jet-aircrew-app-utils#readme",
 }
