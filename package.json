@@ -9,7 +9,7 @@
     "build": "yarn run rollup -c",
     "serve": "yarn run rollup -c -w",
     "lint": "yarn run eslint --ext .js,.ts ./",
-    "test": "jest"
+    "test": "yarn run jest"
   },
   "devDependencies": {
     "@rollup/plugin-typescript": "^2.0.1",
